@@ -17,7 +17,7 @@ public class JenkinsController {
     public String sayHello(String ms )
 
     {
-        return "hello,jenkins" +ms;
+        return "hello,world,jenkins" +ms;
 
     }
 
