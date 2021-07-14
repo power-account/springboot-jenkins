@@ -17,7 +17,7 @@ public class JenkinsController {
     public String sayHello(String ms )
 
     {
-        return "hello,自动部署" +ms;
+        return "hello,jenkins" +ms;
 
     }
 
