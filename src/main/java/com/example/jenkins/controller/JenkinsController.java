@@ -1,5 +1,11 @@
 package com.example.jenkins.controller;
 
+import com.example.jenkins.config.DynamicDataSourceProperties;
+import com.example.jenkins.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,14 +16,31 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 
 @RestController
+@Configuration
+@ConfigurationProperties(prefix = "aa")
+@EnableConfigurationProperties
 public class JenkinsController {
 
+    @Autowired
+    DynamicDataSourceProperties dynamicDataSourceProperties;
+
+    @Autowired
+    UserService userService;
 
     @GetMapping("/hello")
     public String sayHello(String ms )
 
     {
         return "hello,world,jenkins" +ms;
+
+    }
+
+
+    @GetMapping("/ds")
+    public String getDs()
+    {
+
+        return userService.getStr();
 
     }
 
