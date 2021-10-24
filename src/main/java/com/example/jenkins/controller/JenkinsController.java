@@ -1,6 +1,7 @@
 package com.example.jenkins.controller;
 
 import com.example.jenkins.config.DynamicDataSourceProperties;
+import com.example.jenkins.service.AsyncService;
 import com.example.jenkins.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -26,6 +27,9 @@ public class JenkinsController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    AsyncService asyncService;
 
     @GetMapping("/hello")
     public String sayHello(String ms )

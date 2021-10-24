@@ -10,10 +10,15 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UserDao {
 
+    private static ThreadLocal<String> str =new ThreadLocal<>();
 
     public  String getStr(){
         return "1";
 
+    }
+
+    public static void main(String[] args) {
+        str.set("123");
     }
 
 }
