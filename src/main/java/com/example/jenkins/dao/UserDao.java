@@ -20,5 +20,4 @@ public class UserDao {
     public static void main(String[] args) {
         str.set("123");
     }
-
 }
