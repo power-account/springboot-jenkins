@@ -5,5 +5,5 @@ package com.example.jenkins.dao;
  * @Description :
  * @Date 2021-10-25 20:57
  **/
-public class UserMaper extends {
+public interface UserMapper  {
 }
